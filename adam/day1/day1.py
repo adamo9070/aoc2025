@@ -34,6 +34,8 @@ def task_2(dane: list[str]) -> int:
             rotation = (rotation + int(ile)) % 100
     return counter
 
+# test
+
 def main() -> None:
     print(task_1(read_data('data.txt')))
     print(task_2(read_data('data.txt')))
