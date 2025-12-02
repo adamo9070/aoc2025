@@ -26,13 +26,12 @@ def task_1(dane: list[str]) -> int:
     dane2 = []
     result = 0
     for i in dane:
-        dane2.append(i.split('-'))
-    for kody in dane2:
-        for string in kody:
-            string = string.strip()
-            fragment = longest_substring(string)
-            if fragment * (len(string) // len(fragment)) == string or (fragment in kody[1] and fragment in kody[0]):
-                result += int(string)
+        dane2.append(i.strip().split('-'))
+    for i in dane2:
+        for n in range(int(i[0]), int(i[1])+1):
+            j = len(str(n)) // 2
+            if str(n)[j:] == str(n)[:j]:
+                result += n
     return result
 
 #print(longest_substring('112312'))
