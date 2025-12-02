@@ -1,14 +1,13 @@
 inp = open('input.txt').readlines()[0]
 dane = inp.split(',')
 ranges = [x.split('-') for x in dane]
-sum_of_invalid = 0
 invalid_IDs = []
 
 for r in ranges:
     for ID in range(int(r[0]), int(r[1])+1):
         dł = len(str(ID))
         if str(ID)[0] == '0':
-            sum_of_invalid += ID
+            invalid_IDs.append(ID)
         else:
             #dzielniki dł
             for dz in range(1, dł):
@@ -18,4 +17,5 @@ for r in ranges:
                     if len(set(slices)) == 1:
                         invalid_IDs.append(ID)
                         
+
 print(sum(set(invalid_IDs)))
