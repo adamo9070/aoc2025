@@ -3,24 +3,9 @@ def read_data(file) -> list[str]:
         return f.read().strip().split(',')
 
 def longest_substring(x: str) -> str:
-    l = 0
-    l_max = 0
-    max_s = 0
-    sett = set()
-    substring = ''
+    pass
 
-    for i in range(len(x)):
-        while x[i] in sett:
-            sett.remove(x[l])
-            l += 1
-
-        sett.add(x[i])
-        if i - l + 1 > max_s:
-            l_max = l
-            max_s = i - l + 1
-    substring = x[l_max:l_max + max_s]
-
-    return substring
+# WARN: GOWNOGOWNOGOWNOGOWNOGOWNOGOWNO
 
 def task_1(dane: list[str]) -> int:
     dane2 = []
@@ -34,7 +19,23 @@ def task_1(dane: list[str]) -> int:
                 result += n
     return result
 
-#print(longest_substring('112312'))
+def task_2(dane: list[str]) -> int: 
+    dane2 = []
+    result = 0
+    for i in dane:
+        dane2.append(i.strip().split('-'))
+    for i in dane2:
+        for n in range(int(i[0]), int(i[1])+1):
+            if longest_substring(str(n)) == str(n)[0: len(longest_substring(str(n)))]:
+                for k in range(len(longest_substring(str(n))), len(str(n)), len(longest_substring(str(n)))):
+                    if str(n)[k:len(longest_substring(str(n)))] == longest_substring(str(n)):
+                        result += n
+    return result
+
+print(longest_substring('112312'))
 print(task_1(read_data('data/data1-example.txt')))
 print(task_1(read_data('data/data1.txt')))
+print('------task2--------')
+print(task_2(read_data('data/data1-example.txt')))
+print(task_2(read_data('data/data1.txt')))
 
