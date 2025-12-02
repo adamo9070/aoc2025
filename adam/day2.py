@@ -2,13 +2,6 @@ def read_data(file) -> list[str]:
     with open(file, 'r') as f:
         return f.read().strip().split(',')
 
-def dzielniki(x: str) -> list[int]:
-    dzielniki = []
-    for i in range(1, int(x)):
-        if len(x) % i == 0:
-            dzielniki.append(i)
-    return dzielniki
-
 def task_1(dane: list[str]) -> int:
     dane2 = []
     result = 0
