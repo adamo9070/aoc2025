@@ -20,9 +20,16 @@ def part_1(dane: list[str]) -> int:
             result += int(max_bat + max_bat2)
     return result
 
+def part_2(dane: list[str]) -> int:
+    for bank in dane:
+        pierw
+
 def main() -> None:
     print(part_1(read_data('data/data3-example.txt')))
     print(part_1(read_data('data/data3.txt')))
+    print(part_2(read_data('data/data3-example.txt')))
+    #print(part_2(read_data('data/data3.txt')))
+
 
 if __name__ == '__main__':
     main()
