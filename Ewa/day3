@@ -1,0 +1,32 @@
+plik = open("aoc3.txt")
+banks = [n.strip() for n in plik ]
+
+#banks = ['987654321111111', '811111111111119', '234234234234278', '818181911112111']
+
+voltages = []
+
+for i in banks:
+    dig = [int(n) for n in i]
+    biggest1 = 0
+    for x in range(len(dig) - 1):
+        if dig[x] > biggest1:
+            biggest1 = dig[x]
+    biggestp = dig.index(biggest1)
+    idk = []
+    
+    for n in range(biggestp + 1, len(dig)):
+        idk.append(dig[n])
+    biggest2 = max(idk)
+    
+    largest_jol = (str(biggest1) + str(biggest2))
+    
+    voltages.append(int(largest_jol))
+    
+print(sum(voltages))
+
+            
+    
+    
+
+
+    
