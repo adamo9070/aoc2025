@@ -55,7 +55,7 @@ def print_day(intro, results, elapsed):
         print("Part 1:", results[0])
         if results[1] is not None:
             print("Part 2:", results[1])
-        print(f"Took {int(elapsed)}ms")
+        print(f"Took {elapsed:.3f}ms")
 
 def main() -> None:
     results, elapsed = run_day(args.day)
