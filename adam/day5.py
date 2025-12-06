@@ -42,15 +42,25 @@ def task_2(data: list[str]) -> int:
 
     wazne2 = sorted(wazne2, key=lambda x: x[0])
     
-    idx = 1
+    # szukalem metody zeby wykonalo sie sensowna ilosc razy ale bez przesady
     while True:
+        idx = 1
         temp_len = len(wazne2)
         for _ in range(len(wazne2)):
-            if wazne2[idx][0] <= wazne2[idx - 1][1] and wazne2[idx][0] >= wazne2[idx-1][0]:
-                temp = [wazne2[idx-1][0], wazne2[idx][1]]
+            a_start = wazne2[idx-1][0]
+            a_end = wazne2[idx-1][1]
+            b_start = wazne2[idx][0]
+            b_end = wazne2[idx][1]
+            # sprawdza czy sie overlapuja np a - [10, 30] b - [20, 25] --> [10, 30]
+            if b_start >= a_start and b_end <= a_end:
+                wazne2.pop(idx)
+            # sprawdza czy b zaczyna sie w a i konczy poza nim np a - [10, 30] b - [15, 50] --> [10, 50]
+            elif b_start <= a_end and b_end >= a_end:
+                temp = [a_start, b_end]
                 wazne2.pop(idx)
                 wazne2.pop(idx-1)
                 wazne2.insert(idx-1, temp)
+            # innych opcji nie ma bo range sa posortowane wedlug idx 0 rosnaco
             idx += 1
             if idx > len(wazne2)-1:
                 idx = 1
@@ -59,7 +69,6 @@ def task_2(data: list[str]) -> int:
 
     for i in wazne2:
         ile += abs(i[1] - i[0]) + 1
-
     return ile
 
 def main() -> None:
