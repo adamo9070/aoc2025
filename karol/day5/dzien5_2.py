@@ -25,15 +25,17 @@ for r in ranges:
     for x in r:
         r2.append([int(y) for y in x.split('-')])
         
-r2 = sorted(r2)
+r2 = sorted(r2, key=lambda x:x[0])
 i=0
 while i < len(r2)+2127:
     t = []
     for idx_r in range(0, len(r2)-1):
-        if r2[idx_r][1] >= r2[idx_r+1][0]:
+        if r2[idx_r][1] >= r2[idx_r+1][0] and r2[idx_r][1] <= r2[idx_r+1][1]:
             t.append([r2[idx_r][0], r2[idx_r+1][1]])
-        #elif r2[idx_r][0] > r2[idx_r+1][0] and r2[idx_r][1] > r2[idx_r+1][1]:
-            #t.append([r2[idx_r][0], r2[idx_r][1]])
+            
+        elif r2[idx_r][1] >= r2[idx_r+1][0] and r2[idx_r][1] > r2[idx_r+1][1]:
+            t.append(r2[idx_r])
+            
         else:
             t.append(r2[idx_r])
     if t:
