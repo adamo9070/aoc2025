@@ -72,10 +72,10 @@ def task_2(data: list[str]) -> int:
     return ile
 
 def main() -> None:
-    print(task_1(read_data('data/data5-example.txt')))
-    print(task_1(read_data('data/data5.txt')))
-    print(task_2(read_data('data/data5-example.txt')))
-    print(task_2(read_data('data/data5.txt')))
+    print(task_1(read_data('../data/data5-example.txt')))
+    print(task_1(read_data('../data/data5.txt')))
+    print(task_2(read_data('../data/data5-example.txt')))
+    print(task_2(read_data('../data/data5.txt')))
 
 if __name__ == '__main__':
     main()

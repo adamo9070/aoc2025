@@ -29,9 +29,15 @@ def task_2(dane: list[str]) -> int:
                         results.append(n)
     return sum(set(results))
 
-print(task_1(read_data('data/data1-example.txt')))
-print(task_1(read_data('data/data1.txt')))
-print('------task2--------')
-print(task_2(read_data('data/data1-example.txt')))
-print(task_2(read_data('data/data1.txt')))
+def main() -> None:
+    pass
+
+if __name__ == '__main__':
+    main()
+
+# print(task_1(read_data('data/data1-example.txt')))
+# print(task_1(read_data('data/data1.txt')))
+# print('------task2--------')
+# print(task_2(read_data('data/data1-example.txt')))
+# print(task_2(read_data('data/data1.txt')))
 

@@ -1,7 +1,7 @@
-def read_data(file: str) -> list[str]:
-    with open(file, 'r') as f:
-        return [z.strip() for z in f]
-
+# def read_data(file: str) -> list[str]:
+#     with open(file, 'r') as f:
+#         return [z.strip() for z in f]
+#
 def task_1(dane: list[str]) -> int:
     rotation = 50
     counter = 0
@@ -37,8 +37,9 @@ def task_2(dane: list[str]) -> int:
 # test
 
 def main() -> None:
-    print(task_1(read_data('data.txt')))
-    print(task_2(read_data('data.txt')))
+    #print(task_1(read_data('data.txt')))
+    #print(task_2(read_data('data.txt')))
+    pass
 
 if __name__ == '__main__':
     main()
