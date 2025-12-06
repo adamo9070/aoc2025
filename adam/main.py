@@ -28,7 +28,7 @@ def run_day(day_number: int):
         return None, None
 
     with open(path, 'r') as f:
-        lines = [line.strip() for line in f]
+        lines = [line.strip('\n') for line in f]
 
     start_time = time.time()
     results = []
